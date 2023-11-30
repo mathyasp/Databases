@@ -61,13 +61,13 @@ def detail(plant_id):
 
     # TODO: Replace the following line with a database call to retrieve *one*
     # plant from the database, whose id matches the id passed in via the URL.
-    plant_to_show = ''
+    plant_to_show = mongo.db.plantsDatabase.find_one(plant_id)
 
     # TODO: Use the `find` database operation to find all harvests for the
     # plant's id.
     # HINT: This query should be on the `harvests` collection, not the `plants`
     # collection.
-    harvests = ''
+    harvests = mongo.db.harvests.find()
 
     context = {
         'plant' : plant_to_show,
