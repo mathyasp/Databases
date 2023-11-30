@@ -81,10 +81,14 @@ def harvest(plant_id):
     Accepts a POST request with data for 1 harvest and inserts into database.
     """
 
+    # TODO: Get the harvested amount and date from the form data
+    harvested_amount = request.form.get('harvested_amount')
+    date_planted = request.form.get('date_planted')
+
     # TODO: Create a new harvest object by passing in the form data from the
     # detail page form.
     new_harvest = {
-        'quantity': harvested_amount, # e.g. '3 tomatoes'
+        'quantity': harvested_amount,
         'date': date_planted,
         'plant_id': plant_id
     }
